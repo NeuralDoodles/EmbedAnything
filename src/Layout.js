@@ -32,6 +32,7 @@ class Layout extends Component {
       hover_index: null,
       show_about: null,
       algorithm_choice: 0,
+      dim_choice: 3,
     }
     this.sidebar_ctx = null
     this.setSize = _.debounce(this.setSize.bind(this), 200)
@@ -39,7 +40,15 @@ class Layout extends Component {
     this.setSidebarCanvas = this.setSidebarCanvas.bind(this)
     this.toggleAbout = this.toggleAbout.bind(this)
     this.selectAlgorithm = this.selectAlgorithm.bind(this)
+    this.selectDim = this.selectDim.bind(this)
+
   }
+
+  selectDim(v) {
+    let i = this.props.dim_options.indexOf(v)
+    this.setState({ dim_choice: i })
+  }
+
 
   selectAlgorithm(v) {
     let i = this.props.algorithm_options.indexOf(v)
@@ -111,6 +120,7 @@ class Layout extends Component {
       hover_index,
       show_about,
       algorithm_choice,
+      two_dim,
     } = this.state
     let sidebar_ctx = this.sidebar_ctx
 
@@ -122,14 +132,14 @@ class Layout extends Component {
       top: 0,
       height: '100vh',
       overflow: 'auto',
-      background: '#222',
+      background: '#d3d3d3',
       display: 'flex',
       flexDirection: 'column',
     }
     let main_style = {
       position: 'relative',
       height: '100vh',
-      background: '#111',
+      background: '#d3d3d3',
       overflow: 'hidden',
     }
 
@@ -206,6 +216,8 @@ class Layout extends Component {
             algorithm_options={algorithm_options}
             algorithm_choice={algorithm_choice}
             selectAlgorithm={this.selectAlgorithm}
+            //dim_options={dim_options}
+            //dim_choice={dim_choice}
           />
         </div>
         <div style={main_style}>
@@ -222,6 +234,7 @@ class Layout extends Component {
             setHoverIndex={this.setHoverIndex.bind(this)}
             algorithm_embedding_keys={algorithm_embedding_keys}
             algorithm_choice={algorithm_choice}
+            //dim_choice={dim_choice}
           />
         </div>
         {show_about ? (

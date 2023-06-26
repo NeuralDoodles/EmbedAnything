@@ -23,14 +23,16 @@ class Data extends Component {
   scaleEmbeddings(embeddings) {
     let xs = embeddings.map(e => Math.abs(e[0]))
     let ys = embeddings.map(e => Math.abs(e[1]))
+    let zs = embeddings.map(e => Math.abs(e[2]))
     let max_x = _.max(xs)
     let max_y = _.max(ys)
-    let max = Math.max(max_x, max_y)
+    let max_z = _.max(zs)
+    let max = Math.max(max_x, max_y, max_z)
     let scale = d3
       .scaleLinear()
       .domain([-max, max])
       .range([-20, 20])
-    let scaled_embeddings = embeddings.map(e => [scale(e[0]), scale(e[1])])
+    let scaled_embeddings = embeddings.map(e => [scale(e[0]), scale(e[1]),scale(e[2])])
     return scaled_embeddings
   }
 

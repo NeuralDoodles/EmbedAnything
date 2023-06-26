@@ -3,6 +3,9 @@ import * as THREE from 'three'
 import * as _ from 'lodash'
 import * as d3 from 'd3'
 import * as TWEEN from '@tweenjs/tween.js'
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+
+
 
 // Constants for sprite sheets
 let sprite_side = 73
@@ -86,7 +89,7 @@ class Projection extends Component {
       for (let i = 0, index = 0, l = numVertices; i < l; i++, index += 3) {
         let x = echunk[i][0]
         let y = echunk[i][1]
-        let z = 0
+        let z = echunk[i][2]
         target[index] = x
         target[index + 1] = y
         target[index + 2] = z
@@ -166,14 +169,18 @@ class Projection extends Component {
     let ys = mnist_embeddings.map(e => e[1])
     let min_y = _.min(ys)
     let max_y = _.max(ys)
+    let zs = mnist_embeddings.map(e => e[1])
+    let min_z = _.min(zs)
+    let max_z = _.max(zs)
     let data_width = max_x - min_x
     let data_height = max_y - min_y
+    let data_depth = max_z - min_z
     let data_aspect = data_width / data_height
 
     let max_x_from_center = _.max([min_x, max_x].map(m => Math.abs(m)))
     let max_y_from_center = _.max([min_y, max_y].map(m => Math.abs(m)))
-
-    let max_center = Math.max(max_x_from_center, max_y_from_center)
+    let max_z_from_center = _.max([min_z, max_z].map(m => Math.abs(m)))
+    let max_center = Math.max(max_x_from_center, max_y_from_center, max_z_from_center)
 
     let camera_z_start
     if (data_aspect > aspect) {
@@ -190,7 +197,7 @@ class Projection extends Component {
     this.camera.far = far
     this.camera.position.z = camera_z_start * 1.1
 
-    // set up zoom
+    /*// set up zoom
     this.d3_zoom = d3
       .zoom()
       .scaleExtent([this.getScaleFromZ(far - 1), this.getScaleFromZ(0.1)])
@@ -203,7 +210,7 @@ class Projection extends Component {
     var initial_transform = d3.zoomIdentity
       .translate(width / 2, height / 2)
       .scale(initial_scale)
-    this.d3_zoom.transform(view, initial_transform)
+    this.d3_zoom.transform(view, initial_transform)*/
   }
 
   addPoints() {
@@ -242,7 +249,7 @@ class Projection extends Component {
       let vertices = []
       for (let v = 0; v < echunk.length; v++) {
         let embedding = echunk[v]
-        let vert = new THREE.Vector3(embedding[0], embedding[1], 0)
+        let vert = new THREE.Vector3(embedding[0], embedding[1], embedding[2])
         vertices[v] = vert
       }
 
@@ -259,7 +266,7 @@ class Projection extends Component {
       for (let i = 0, index = 0, l = numVertices; i < l; i++, index += 3) {
         let x = echunk[i][0]
         let y = echunk[i][1]
-        let z = 0
+        let z = echunk[i][2]
         positions[index] = x
         positions[index + 1] = y
         positions[index + 2] = z
@@ -279,6 +286,7 @@ class Projection extends Component {
 
       for (let i = 0, index = 0, l = numVertices; i < l; i++, index += 3) {
         let color = color_array[lchunk[i]]
+        console.log(lchunk[i])
         colors[index] = color[0] / 255
         colors[index + 1] = color[1] / 255
         colors[index + 2] = color[2] / 255
@@ -288,7 +296,7 @@ class Projection extends Component {
       let uniforms = {
         texture: { value: this.textures[c] },
         repeat: { value: new THREE.Vector2(texture_subsize, texture_subsize) },
-        size: { value: sprite_image_size },
+        size: { value: sprite_image_size*0.2 },
       }
 
       let vertex_shader = `
@@ -402,12 +410,12 @@ class Projection extends Component {
     let { algorithm_embedding_keys, algorithm_choice } = this.props
 
     let point = this.scene.children[1].children[0]
-
+    console.log()
     let embedding = this.props[algorithm_embedding_keys[algorithm_choice]][
       full_index
     ]
 
-    let vert = new THREE.Vector3(embedding[0], embedding[1], 0)
+    let vert = new THREE.Vector3(embedding[0], embedding[1], embedding[2])
     let vertices = [vert]
 
     var offsets = new Float32Array(2) // 2 coordinates per point
@@ -462,6 +470,7 @@ class Projection extends Component {
       this.props.setHoverIndex(full_index)
       this.highlightPoint(sprite_index, digit_index, full_index)
       this.scene.children[1].visible = true
+      console.log(this.props.mnist_labels[full_index])
 
       sidebar_ctx.fillRect(0, 0, sidebar_image_size, sidebar_image_size)
       sidebar_ctx.drawImage(
@@ -500,18 +509,25 @@ class Projection extends Component {
     let { width, height } = this.props
 
     this.scene = new THREE.Scene()
+    //this.scene.background = new THREE.Color('#FFFFFF' );
 
-    let vFOV = 75
+
+    let vFOV = 20
     let aspect = width / height
     let near = 0.01
     let far = 1000
 
     this.camera = new THREE.PerspectiveCamera(vFOV, aspect, near, far)
+    this.camera.position.set(120, 100, 0)
+    //this.camera.lookAt(new THREE.Vector3(0, 0, 0));
 
-    this.renderer = new THREE.WebGLRenderer()
-    this.renderer.setClearColor(0x111111, 1)
+
+    this.renderer = new THREE.WebGLRenderer({antialias: true})
+    this.renderer.setClearColor('#000000', 1)
     this.renderer.setSize(width, height)
     this.mount.appendChild(this.renderer.domElement)
+
+    this.controls = new OrbitControls( this.camera, this.renderer.domElement );
 
     this.addPoints()
 
@@ -522,12 +538,15 @@ class Projection extends Component {
     this.animate()
 
     this.handleMouse()
+    //this.controls.update();
   }
 
   animate() {
     requestAnimationFrame(this.animate)
     TWEEN.update()
+    this.controls.update();
     this.renderer.render(this.scene, this.camera)
+    
   }
 
   componentDidMount() {
@@ -550,6 +569,8 @@ class Projection extends Component {
   componentWillUnmount() {
     this.mount.removeChild(this.renderer.domElement)
   }
+
+  
 
   render() {
     let { width, height } = this.props
