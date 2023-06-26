@@ -1,13 +1,13 @@
 {
-  "main.css": "/umap-explorer/static/css/main.885fcc8a.chunk.css",
-  "main.js": "/umap-explorer/static/js/main.d805e937.chunk.js",
-  "main.js.map": "/umap-explorer/static/js/main.d805e937.chunk.js.map",
-  "static/js/1.f6b1676c.chunk.js": "/umap-explorer/static/js/1.f6b1676c.chunk.js",
-  "static/js/1.f6b1676c.chunk.js.map": "/umap-explorer/static/js/1.f6b1676c.chunk.js.map",
-  "runtime~main.js": "/umap-explorer/static/js/runtime~main.abb4f0ea.js",
-  "runtime~main.js.map": "/umap-explorer/static/js/runtime~main.abb4f0ea.js.map",
-  "static/css/main.885fcc8a.chunk.css.map": "/umap-explorer/static/css/main.885fcc8a.chunk.css.map",
-  "index.html": "/umap-explorer/index.html",
-  "precache-manifest.aa6b1cbd4cd21d0d8d5b7902a75140b5.js": "/umap-explorer/precache-manifest.aa6b1cbd4cd21d0d8d5b7902a75140b5.js",
-  "service-worker.js": "/umap-explorer/service-worker.js"
+  "main.css": "/EmbedAnything/static/css/main.885fcc8a.chunk.css",
+  "main.js": "/EmbedAnything/static/js/main.2b1cca13.chunk.js",
+  "main.js.map": "/EmbedAnything/static/js/main.2b1cca13.chunk.js.map",
+  "static/js/1.f6b1676c.chunk.js": "/EmbedAnything/static/js/1.f6b1676c.chunk.js",
+  "static/js/1.f6b1676c.chunk.js.map": "/EmbedAnything/static/js/1.f6b1676c.chunk.js.map",
+  "runtime~main.js": "/EmbedAnything/static/js/runtime~main.8b8df9f1.js",
+  "runtime~main.js.map": "/EmbedAnything/static/js/runtime~main.8b8df9f1.js.map",
+  "static/css/main.885fcc8a.chunk.css.map": "/EmbedAnything/static/css/main.885fcc8a.chunk.css.map",
+  "index.html": "/EmbedAnything/index.html",
+  "precache-manifest.bf8d19c46820072a2913c64753659246.js": "/EmbedAnything/precache-manifest.bf8d19c46820072a2913c64753659246.js",
+  "service-worker.js": "/EmbedAnything/service-worker.js"
 }

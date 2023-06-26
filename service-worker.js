@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/umap-explorer/precache-manifest.aa6b1cbd4cd21d0d8d5b7902a75140b5.js"
+  "/EmbedAnything/precache-manifest.bf8d19c46820072a2913c64753659246.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/umap-explorer/index.html", {
+workbox.routing.registerNavigationRoute("/EmbedAnything/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
