@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "e86cbceb3c5cc8ad4bce",
-    "url": "/umap-explorer/static/css/main.9273a056.chunk.css"
+    "revision": "d805e93745fa8fbcb455",
+    "url": "/umap-explorer/static/css/main.885fcc8a.chunk.css"
   },
   {
-    "revision": "e86cbceb3c5cc8ad4bce",
-    "url": "/umap-explorer/static/js/main.e86cbceb.chunk.js"
+    "revision": "d805e93745fa8fbcb455",
+    "url": "/umap-explorer/static/js/main.d805e937.chunk.js"
   },
   {
     "revision": "f6b1676c65765c1e2427",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/umap-explorer/static/js/runtime~main.abb4f0ea.js"
   },
   {
-    "revision": "96ad72f92e2883c5b3743bb44f7b4f1b",
+    "revision": "77addb259f3c5cbc4a8437234265f499",
     "url": "/umap-explorer/index.html"
   }
 ];
