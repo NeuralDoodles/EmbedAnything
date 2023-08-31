@@ -1,13 +1,13 @@
 {
-  "main.css": "/EmbedAnything/static/css/main.1e39ec08.chunk.css",
-  "main.js": "/EmbedAnything/static/js/main.52cd768a.chunk.js",
-  "main.js.map": "/EmbedAnything/static/js/main.52cd768a.chunk.js.map",
-  "static/js/1.edeb3cd7.chunk.js": "/EmbedAnything/static/js/1.edeb3cd7.chunk.js",
-  "static/js/1.edeb3cd7.chunk.js.map": "/EmbedAnything/static/js/1.edeb3cd7.chunk.js.map",
+  "main.css": "/EmbedAnything/static/css/main.6ece3a85.chunk.css",
+  "main.js": "/EmbedAnything/static/js/main.fbeff987.chunk.js",
+  "main.js.map": "/EmbedAnything/static/js/main.fbeff987.chunk.js.map",
+  "static/js/1.68f4caf5.chunk.js": "/EmbedAnything/static/js/1.68f4caf5.chunk.js",
+  "static/js/1.68f4caf5.chunk.js.map": "/EmbedAnything/static/js/1.68f4caf5.chunk.js.map",
   "runtime~main.js": "/EmbedAnything/static/js/runtime~main.8b8df9f1.js",
   "runtime~main.js.map": "/EmbedAnything/static/js/runtime~main.8b8df9f1.js.map",
-  "static/css/main.1e39ec08.chunk.css.map": "/EmbedAnything/static/css/main.1e39ec08.chunk.css.map",
+  "static/css/main.6ece3a85.chunk.css.map": "/EmbedAnything/static/css/main.6ece3a85.chunk.css.map",
   "index.html": "/EmbedAnything/index.html",
-  "precache-manifest.3aba2dccba3b6080ef0bc2d411da33ce.js": "/EmbedAnything/precache-manifest.3aba2dccba3b6080ef0bc2d411da33ce.js",
+  "precache-manifest.5bbb5cb56acae5f25525e09d8db6de51.js": "/EmbedAnything/precache-manifest.5bbb5cb56acae5f25525e09d8db6de51.js",
   "service-worker.js": "/EmbedAnything/service-worker.js"
 }
