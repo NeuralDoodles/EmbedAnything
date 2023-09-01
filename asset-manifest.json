@@ -1,13 +1,13 @@
 {
   "main.css": "/EmbedAnything/static/css/main.6ece3a85.chunk.css",
-  "main.js": "/EmbedAnything/static/js/main.9d73acdf.chunk.js",
-  "main.js.map": "/EmbedAnything/static/js/main.9d73acdf.chunk.js.map",
+  "main.js": "/EmbedAnything/static/js/main.458d6b41.chunk.js",
+  "main.js.map": "/EmbedAnything/static/js/main.458d6b41.chunk.js.map",
   "static/js/1.68f4caf5.chunk.js": "/EmbedAnything/static/js/1.68f4caf5.chunk.js",
   "static/js/1.68f4caf5.chunk.js.map": "/EmbedAnything/static/js/1.68f4caf5.chunk.js.map",
   "runtime~main.js": "/EmbedAnything/static/js/runtime~main.8b8df9f1.js",
   "runtime~main.js.map": "/EmbedAnything/static/js/runtime~main.8b8df9f1.js.map",
   "static/css/main.6ece3a85.chunk.css.map": "/EmbedAnything/static/css/main.6ece3a85.chunk.css.map",
   "index.html": "/EmbedAnything/index.html",
-  "precache-manifest.d3a7bec4ec51a8ef05e60d9400c559ea.js": "/EmbedAnything/precache-manifest.d3a7bec4ec51a8ef05e60d9400c559ea.js",
+  "precache-manifest.e0a82e946a6af89265bb1073555ec4fd.js": "/EmbedAnything/precache-manifest.e0a82e946a6af89265bb1073555ec4fd.js",
   "service-worker.js": "/EmbedAnything/service-worker.js"
 }
