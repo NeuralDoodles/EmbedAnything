@@ -1,17 +1,3 @@
-Code for an interactive [UMAP](https://github.com/lmcinnes/umap) visualization of the MNIST data set. Demo at [https://grantcuster.github.io/umap-explorer/](https://grantcuster.github.io/umap-explorer/). You can read more about the demo in [the about section](https://grantcuster.github.io/umap-explorer/#about).
-
-## A rough guide to the code
-
-The demo app is a React app. It uses a `src/Data.js` to fetch the data and `src/Layout.js` to handle the layout of the page. The three.js visualization code is in `src/Projection.js`. The texture atlases are in the public folder as images. I also included the iPython notebook files I used to generate the texture atlases (`making_mnist_images.ipynb`) and to download the UMAP embeddings (`plot_mnist_example.ipynb`).
-
-## Running the app
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-In the project directory, you can run:
-
-### `npm start`
-
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
